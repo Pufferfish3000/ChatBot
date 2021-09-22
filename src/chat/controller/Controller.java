@@ -10,7 +10,7 @@ public class Controller
 	
 	public Controller()
 	{
-		
+	this.myChatbot = new Chatbot();	
 	}
 	
 	public void main()
