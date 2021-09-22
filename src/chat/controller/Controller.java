@@ -31,7 +31,14 @@ public class Controller
 			System.out.println(response);
 			user = scan.nextLine();
 		}
-		System.out.println("Killing " + ChatName + ".....");
+		System.out.println("Killing " + ChatName + " please wait");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(ChatName+ " has been killed thank you!");
 	}
 	
 	public String interactWithChatbot(String text)
