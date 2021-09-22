@@ -4,15 +4,15 @@ public class Chatbot
 {
 	private String name;
 	
-	public Chatbot()
+	public Chatbot(String name)
 	{
-		this.name = "placeholder";
+		this.name = name;
 	}
 	
 	@Override
 	public String toString()
 	{
-		String description = "I am a chat bot!";
+		String description = "I am a chat bot!, my name is " + name + "\n";
 		description += "Ask me a question!";
 		return description;
 	}
