@@ -9,6 +9,18 @@ public class Chatbot
 		this.name = name;
 	}
 	
+	//getters
+	public String getBotName()
+	{
+		return this.name;
+	}
+	
+	//setters
+	public void setBotName(String name)
+	{
+		this.name = name;
+	}
+	
 	@Override
 	public String toString()
 	{
