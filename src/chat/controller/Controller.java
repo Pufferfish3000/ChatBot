@@ -32,13 +32,15 @@ public class Controller
 			user = scan.nextLine();
 		}
 		System.out.println("Killing " + ChatName + " please wait");
-		try {
+		try 
+		{
 			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (InterruptedException e) 
+		{
 			e.printStackTrace();
 		}
-		System.out.println(ChatName+ " has been killed thank you!");
+		System.out.println(ChatName+ " has been killed. Thank you!");
 	}
 	
 	public String interactWithChatbot(String text)
