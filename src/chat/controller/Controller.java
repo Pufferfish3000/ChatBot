@@ -31,7 +31,7 @@ public class Controller
 			System.out.println(response);
 			user = scan.nextLine();
 		}
-		System.out.println("Bot is shutting down.....");
+		System.out.println("Killing " + ChatName + ".....");
 	}
 	
 	public String interactWithChatbot(String text)
