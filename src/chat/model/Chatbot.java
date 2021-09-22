@@ -9,6 +9,14 @@ public class Chatbot
 		this.name = name;
 	}
 	
+	public String processText(String text)
+	{
+		String response = ">";
+		response += text + "\n";
+		
+		return response;
+	}
+	
 	//getters
 	public String getBotName()
 	{
