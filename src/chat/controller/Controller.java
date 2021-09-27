@@ -18,23 +18,24 @@ public class Controller
 	
 	public void main()
 	{
-		System.out.println("Hi I am a chat bot!");
-		System.out.println("Please enter my name below!");
+		System.out.println(">Hi I am a chat bot!");
+		System.out.println(">Please enter my name below!");
 		ChatName = scan.nextLine();
 		myChatbot.setBotName(ChatName);
-		System.out.println(myChatbot);
+		System.out.println("> My Name is " + myChatbot.getBotName()+ "!");
+		System.out.println(">ask me a question!");
 		
 		user = scan.nextLine();
-		while(!user.contentEquals("quit"))
+		while(!user.equalsIgnoreCase("quit"))
 		{
 			String response = interactWithChatbot(user);
 			System.out.println(response);
 			user = scan.nextLine();
 		}
-		System.out.println("Killing " + ChatName + " please wait");
+		System.out.println("Killing " + ChatName + " please wait.");
 		try 
 		{
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} 
 		catch (InterruptedException e) 
 		{
