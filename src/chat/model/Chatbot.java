@@ -24,8 +24,6 @@ public class Chatbot
 	
 	public String processText(String text)
 	{
-		
-		isPolitical(text);
 		String response = ">";
 		if (text.toLowerCase().indexOf ("hi") >= 0 ||text.toLowerCase().indexOf("hello") >= 0)
 		{
@@ -42,6 +40,14 @@ public class Chatbot
 		if (text.toLowerCase().indexOf("time") >= 0)
 		{
 			response += getTime();
+		}
+		if (isPolitical(text));
+		{
+			
+		}
+		if (isPolite(text))
+		{
+			
 		}
 		return response;
 	}
@@ -141,7 +147,7 @@ public class Chatbot
 		return botRandom;
 	}
 	
-	public boolean isPolite()
+	public boolean isPolite(String polite)
 	{
 		boolean botPolite = false;
 		
@@ -152,6 +158,9 @@ public class Chatbot
 	{
 		boolean botPolitical = false;
 		for (int i = 0; i < politicList.size(); i++)
+		{
+			
+		}
 		
 		return botPolitical;
 	}
