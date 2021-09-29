@@ -22,7 +22,7 @@ public class Controller
 		System.out.println(">Please enter my name below!");
 		ChatName = scan.nextLine();
 		myChatbot.setBotName(ChatName);
-		System.out.println("> My Name is " + myChatbot.getBotName()+ "!");
+		System.out.println(">My Name is " + myChatbot.getBotName()+ "!");
 		System.out.println(">ask me a question!");
 		
 		user = scan.nextLine();
