@@ -9,19 +9,33 @@ public class Chatbot
 	private int greetingCount;
 	private int farewellCount;
 	private ArrayList<String> politicList = new ArrayList<String>();
+	private ArrayList <String> randList = new ArrayList<String>();
 	
 	public Chatbot(String name)
 	{
 		this.name = name;
 		this.greetingCount = 0;
 		this.farewellCount = 4;
+		
 		this.politicList.add("politics");
 		this.politicList.add("republican");
 		this.politicList.add("democrat");
 		this.politicList.add("election");
 		this.politicList.add("biden");
+		
+		this.randList.add("Do you enjoy art, i do");
+		this.randList.add("On the weekdays, I spend my time playing with my cat");
+		this.randList.add("Sometimes I drink hotsauce on its own");
+		this.randList.add("I enjoy the book War of the Worlds");
+		this.randList.add("I like Java");
+		this.randList.add("Stuffed animals are great!");
+		this.randList.add("My favorite singer is Colter Wall!");
+		this.randList.add("My favorite video game is Fallout 3!");
+		this.randList.add("My creater ought to make a sky method so I can fall asleep looking at the stars");
+		this.randList.add("I enjoy vanilla ice cream");
+		
+		
 	}
-	
 	public String processText(String text)
 	{
 		String response = ">";
@@ -40,6 +54,10 @@ public class Chatbot
 		if (text.toLowerCase().indexOf("time") >= 0)
 		{
 			response += getTime();
+		}
+		if (text.toLowerCase().indexOf("rand") >= 0)
+		{
+			response += randomTopic();
 		}
 		if (isPolitical(text));
 		{
@@ -143,6 +161,9 @@ public class Chatbot
 	public String randomTopic() 
 	{
 		String botRandom = "";
+		int randomIndex = (int) (Math.random() * randList.size());
+		
+		botRandom = randList.get(randomIndex);
 		
 		return botRandom;
 	}
