@@ -2,46 +2,41 @@ package chat.controller;
 
 import java.util.*;
 import chat.model.Chatbot;
+import chat.view.ChatView;
 
 public class Controller 
 {
 	private Scanner scan = new Scanner(System.in);
 	private Chatbot myChatbot;
+	private ChatView view;
+	
 	String user;
-	String ChatName;
+	String chatName;
 	String response;
 	
 	public Controller()
 	{
-	this.myChatbot = new Chatbot("default name");	
+	this.myChatbot = new Chatbot("default name");
+	this.view = new ChatView();
 	}
 	
 	public void main()
 	{
-		System.out.println(">Hi I am a chat bot!");
-		System.out.println(">Please enter my name below!");
-		ChatName = scan.nextLine();
-		myChatbot.setBotName(ChatName);
-		System.out.println(">My Name is " + myChatbot.getBotName()+ "!");
-		System.out.println(">ask me a question!");
+		view.displayMessage("Hi I am a chat bot!");
+		chatName = view.askQuestion("Please enter my name below!");
 		
-		user = scan.nextLine();
+		myChatbot.setBotName(chatName);
+		view.displayMessage("My Name is " + myChatbot.getBotName()+ "!");
+		String user = view.askQuestion("ask me a question!");
+		
 		while(!user.equalsIgnoreCase("quit"))
 		{
 			String response = interactWithChatbot(user);
-			System.out.println(response);
-			user = scan.nextLine();
+			user = view.askQuestion(response);
 		}
-		System.out.println("Killing " + ChatName + " please wait.");
-		try 
-		{
-			Thread.sleep(4000);
-		} 
-		catch (InterruptedException e) 
-		{
-			e.printStackTrace();
-		}
-		System.out.println(ChatName+ " has been killed. Thank you!");
+		view.displayMessage("Killing " + chatName + " please wait.");
+		
+		view.displayMessage(chatName+ " has been killed. Thank you!");
 	}
 	
 	public String interactWithChatbot(String text)

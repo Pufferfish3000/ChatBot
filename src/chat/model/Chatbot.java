@@ -38,7 +38,7 @@ public class Chatbot
 	}
 	public String processText(String text)
 	{
-		String response = ">";
+		String response = "";
 		if (text.toLowerCase().indexOf ("hi") >= 0 ||text.toLowerCase().indexOf("hello") >= 0)
 		{
 			response += sayGreeting();
