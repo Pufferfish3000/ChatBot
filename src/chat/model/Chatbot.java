@@ -23,16 +23,16 @@ public class Chatbot
 		this.politicList.add("election");
 		this.politicList.add("biden");
 		
-		this.randList.add("Do you enjoy art, i do");
-		this.randList.add("On the weekdays, I spend my time playing with my cat");
-		this.randList.add("Sometimes I drink hotsauce on its own");
-		this.randList.add("I enjoy the book War of the Worlds");
-		this.randList.add("I like Java");
-		this.randList.add("Stuffed animals are great!");
-		this.randList.add("My favorite singer is Colter Wall!");
-		this.randList.add("My favorite video game is Fallout 3!");
-		this.randList.add("My creater ought to make a sky method so I can fall asleep looking at the stars");
-		this.randList.add("I enjoy vanilla ice cream");
+		this.randList.add("Do you enjoy art, i do ");
+		this.randList.add("On the weekdays, I spend my time playing with my cat ");
+		this.randList.add("Sometimes I drink hotsauce on its own ");
+		this.randList.add("I enjoy the book War of the Worlds ");
+		this.randList.add("I like Java ");
+		this.randList.add("Stuffed animals are great! ");
+		this.randList.add("My favorite singer is Colter Wall! ");
+		this.randList.add("My favorite video game is Fallout 3! ");
+		this.randList.add("My creater ought to make a sky method so I can fall asleep looking at the stars ");
+		this.randList.add("I enjoy vanilla ice cream ");
 		
 		
 	}
@@ -42,10 +42,6 @@ public class Chatbot
 		if (text.toLowerCase().indexOf ("hi") >= 0 ||text.toLowerCase().indexOf("hello") >= 0)
 		{
 			response += sayGreeting();
-		}
-		if (text.toLowerCase().indexOf("bye") >= 0 || text.toLowerCase().indexOf("goodbye") >= 0)
-		{
-			response += sayFarewell();
 		}
 		if (text.toLowerCase().indexOf("date") >= 0 )
 		{
@@ -66,6 +62,10 @@ public class Chatbot
 		if (isPolite(text))
 		{
 			
+		}
+		if (text.toLowerCase().indexOf("bye") >= 0 || text.toLowerCase().indexOf("goodbye") >= 0)
+		{
+			response += sayFarewell();
 		}
 		return response;
 	}
