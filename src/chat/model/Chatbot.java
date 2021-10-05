@@ -53,7 +53,7 @@ public class Chatbot
 		}
 		if (text.toLowerCase().indexOf("rand") >= 0)
 		{
-			response += randomTopic();
+			response += getRandomTopic();
 		}
 		if (isPolitical(text));
 		{
@@ -71,9 +71,9 @@ public class Chatbot
 	}
 	
 	//getters
-	public String getBotName()
+	public String getName()
 	{
-		return this.name;
+		return "My name is " + this.name;
 	}
 	
 	//setters
@@ -104,7 +104,7 @@ public class Chatbot
 	
 	public String getTime()
 	{
-		String time = "The time today is ";
+		String time = "The time is ";
 		LocalDateTime currentTime = LocalDateTime.now();
 		int minute = currentTime.getMinute();
 		int hour = currentTime.getHour();
@@ -158,7 +158,7 @@ public class Chatbot
 		return botFarewell;
 	}
 	
-	public String randomTopic() 
+	public String getRandomTopic() 
 	{
 		String botRandom = "";
 		int randomIndex = (int) (Math.random() * randList.size());
@@ -172,17 +172,41 @@ public class Chatbot
 	{
 		boolean botPolite = false;
 		
+		if (polite.toLowerCase().indexOf("please") >= 0)
+		{ 
+			botPolite = true;
+		}
+		if (polite.toLowerCase().indexOf("thank you") >= 0)
+		{ 
+			botPolite = true;
+		}
 		return botPolite;
 	}
 	
 	public boolean isPolitical(String politics)
 	{
 		boolean botPolitical = false;
-		for (int i = 0; i < politicList.size(); i++)
-		{
-			
-		}
 		
+		if (politics.toLowerCase().indexOf("politics") >= 0)
+		{
+			botPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("republican") >= 0)
+		{
+			botPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("democrat") >= 0)
+		{
+			botPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("election") >= 0)
+		{
+			botPolitical = true;
+		}
+		if (politics.toLowerCase().indexOf("biden") >= 0)
+		{
+			botPolitical = true;
+		}
 		return botPolitical;
 	}
 	

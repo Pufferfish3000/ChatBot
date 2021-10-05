@@ -2,13 +2,13 @@ package chat.controller;
 
 import java.util.*;
 import chat.model.Chatbot;
-import chat.view.ChatView;
+import chat.view.Popup;
 
 public class Controller 
 {
 	private Scanner scan = new Scanner(System.in);
 	private Chatbot myChatbot;
-	private ChatView view;
+	private Popup view;
 	
 	String user;
 	String chatName;
@@ -17,7 +17,7 @@ public class Controller
 	public Controller()
 	{
 	this.myChatbot = new Chatbot("default name");
-	this.view = new ChatView();
+	this.view = new Popup();
 	}
 	
 	public void main()
@@ -26,7 +26,7 @@ public class Controller
 		chatName = view.askQuestion("Please enter my name below!");
 		
 		myChatbot.setBotName(chatName);
-		view.displayMessage("My Name is " + myChatbot.getBotName()+ "!");
+		view.displayMessage("My name is " + myChatbot.getName()+ "!");
 		String user = view.askQuestion("ask me a question!");
 		
 		while(!user.equalsIgnoreCase("quit"))

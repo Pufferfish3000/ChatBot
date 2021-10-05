@@ -2,7 +2,7 @@ package chat.view;
 
 import javax.swing.JOptionPane;
 
-public class ChatView 
+public class Popup 
 {
 	public void displayMessage(String message)
 	{
