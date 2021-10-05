@@ -20,7 +20,7 @@ public class Controller
 	this.view = new Popup();
 	}
 	
-	public void main()
+	public void start()
 	{
 		view.displayMessage("Hi I am a chat bot!");
 		chatName = view.askQuestion("Please enter my name below!");
