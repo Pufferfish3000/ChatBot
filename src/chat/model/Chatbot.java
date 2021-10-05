@@ -209,6 +209,30 @@ public class Chatbot
 		return botPolitical;
 	}
 	
+	public boolean containsQuestion(String question)
+	{
+		question = "";
+		boolean hasQuestion = false;
+		
+		if (question.toLowerCase().indexOf("?") >= 0 || question.toLowerCase().indexOf("can you") >= 0)
+		{
+			hasQuestion = true;
+		}
+		if (question.toLowerCase().indexOf("will you") >= 0)
+		{
+			hasQuestion = true;
+		}
+		
+		return hasQuestion;
+	}
+	
+	public String answerQuestion(String input)
+	{
+		String answer = "";
+		
+		return answer;
+	}
+	
 	@Override
 	public String toString()
 	{
