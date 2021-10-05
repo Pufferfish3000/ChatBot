@@ -33,9 +33,8 @@ public class Chatbot
 		this.randList.add("My favorite video game is Fallout 3! ");
 		this.randList.add("My creater ought to make a sky method so I can fall asleep looking at the stars ");
 		this.randList.add("I enjoy vanilla ice cream ");
-		
-		
 	}
+	
 	public String processText(String text)
 	{
 		String response = "";
@@ -82,7 +81,7 @@ public class Chatbot
 		this.name = name;
 	}
 	
-	public String getDate()
+	private String getDate()
 	{
 		String date = "The date today is " ;
 		
@@ -102,7 +101,7 @@ public class Chatbot
 		return date;
 	}
 	
-	public String getTime()
+	private String getTime()
 	{
 		String time = "The time is ";
 		LocalDateTime currentTime = LocalDateTime.now();
@@ -158,7 +157,7 @@ public class Chatbot
 		return botFarewell;
 	}
 	
-	public String getRandomTopic() 
+	private String getRandomTopic() 
 	{
 		String botRandom = "";
 		int randomIndex = (int) (Math.random() * randList.size());
@@ -168,7 +167,7 @@ public class Chatbot
 		return botRandom;
 	}
 	
-	public boolean isPolite(String polite)
+	private boolean isPolite(String polite)
 	{
 		boolean botPolite = false;
 		
@@ -183,7 +182,7 @@ public class Chatbot
 		return botPolite;
 	}
 	
-	public boolean isPolitical(String politics)
+	private boolean isPolitical(String politics)
 	{
 		boolean botPolitical = false;
 		
