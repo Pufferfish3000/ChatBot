@@ -227,9 +227,9 @@ public class Chatbot
 	{
 		String answer = "";
 		
-		int meSpot = input.toLowerCase().indexOf ("me");
-		int iSpot = input.toLowerCase().indexOf ("i");
-		int youSpot = input.toLowerCase().indexOf ("you");
+		int meSpot = input.toLowerCase().indexOf (" me ");
+		int iSpot = input.toLowerCase().indexOf (" i ");
+		int youSpot = input.toLowerCase().indexOf (" you ");
 		answer += "You said: ";
 		
 		if (meSpot == -1 && youSpot == -1)
@@ -239,15 +239,22 @@ public class Chatbot
 		else if (meSpot >= 0)
 		{
 			String response  = input.substring(0, meSpot);
-			response += "you";
-			response += input.substring(meSpot + 2);
+			response += " you ";
+			response += input.substring(meSpot + 4);
+			answer += response;
+		}
+		else if (iSpot >= 0)
+		{
+			String response  = input.substring(0, iSpot);
+			response += " you ";
+			response += input.substring(iSpot + 3);
 			answer += response;
 		}
 		else
 		{
 			String response  = input.substring(0, youSpot);
-			response += "me";
-			response += input.substring(youSpot + 3);
+			response += " me ";
+			response += input.substring(youSpot + 5);
 			answer += response;
 		}
 		
