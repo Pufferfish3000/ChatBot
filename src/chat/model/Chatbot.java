@@ -59,6 +59,11 @@ public class Chatbot
 		{
 			response += sayFarewell();
 		}
+		if (containsQuestion(text))
+		{
+			response += "\n";
+			response += answerQuestion(text);
+		}
 		return response;
 	}
 	
@@ -221,6 +226,32 @@ public class Chatbot
 	public String answerQuestion(String input)
 	{
 		String answer = "";
+		
+		int meSpot = input.toLowerCase().indexOf ("me");
+		int iSpot = input.toLowerCase().indexOf ("i");
+		int youSpot = input.toLowerCase().indexOf ("you");
+		answer += "You said: ";
+		
+		if (meSpot == -1 && youSpot == -1)
+		{
+			answer += input;
+		}
+		else if (meSpot >= 0)
+		{
+			String response  = input.substring(0, meSpot);
+			response += "you";
+			response += input.substring(meSpot + 2);
+			answer += response;
+		}
+		else
+		{
+			String response  = input.substring(0, youSpot);
+			response += "me";
+			response += input.substring(youSpot + 3);
+			answer += response;
+		}
+		
+		answer += " I think " + getRandomTopic();
 		
 		return answer;
 	}
