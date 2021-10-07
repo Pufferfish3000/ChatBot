@@ -8,7 +8,6 @@ public class Chatbot
 	private String name;
 	private int greetingCount;
 	private int farewellCount;
-	private ArrayList<String> politicList = new ArrayList<String>();
 	private ArrayList <String> randList = new ArrayList<String>();
 	
 	public Chatbot(String name)
@@ -16,12 +15,6 @@ public class Chatbot
 		this.name = name;
 		this.greetingCount = 0;
 		this.farewellCount = 4;
-		
-		this.politicList.add("politics");
-		this.politicList.add("republican");
-		this.politicList.add("democrat");
-		this.politicList.add("election");
-		this.politicList.add("biden");
 		
 		this.randList.add("Do you enjoy art, i do ");
 		this.randList.add("On the weekdays, I spend my time playing with my cat ");
@@ -211,7 +204,6 @@ public class Chatbot
 	
 	public boolean containsQuestion(String question)
 	{
-		question = "";
 		boolean hasQuestion = false;
 		
 		if (question.toLowerCase().indexOf("?") >= 0 || question.toLowerCase().indexOf("can you") >= 0)
