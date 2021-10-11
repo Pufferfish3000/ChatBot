@@ -32,7 +32,7 @@ public class Chatbot
 		this.randList.add("I enjoy vanilla ice cream ");
 	}
 	/**
-	 * 
+	 * process text for chat bot
 	 * @param text The text that the user puts into process text
 	 * @return the chatbots answer
 	 */
@@ -88,6 +88,10 @@ public class Chatbot
 		this.name = name;
 	}
 	
+	/**
+	 * 
+	 * @return date The current date 
+	 */
 	private String getDate()
 	{
 		String date = "The date today is " ;
@@ -108,6 +112,10 @@ public class Chatbot
 		return date;
 	}
 	
+	/**
+	 * 
+	 * @return time The current time
+	 */
 	private String getTime()
 	{
 		String time = "The time is ";
@@ -120,6 +128,10 @@ public class Chatbot
 		return time;
 	}
 	
+	/**
+	 * 
+	 * @return botGreeting - a series of greetings
+	 */
 	public String sayGreeting()
 	{
 		String botGreeting = "";
@@ -141,7 +153,11 @@ public class Chatbot
 		
 		return botGreeting;
 	}
- 	
+	
+ 	/**
+ 	 * 
+ 	 * @return botFarewell - a series of farewells
+ 	 */
 	public String sayFarewell()
 	{
 		String botFarewell = "";
@@ -164,6 +180,10 @@ public class Chatbot
 		return botFarewell;
 	}
 	
+	/**
+	 * 
+	 * @return botRandom - a series of random topics
+	 */
 	private String getRandomTopic() 
 	{
 		String botRandom = "";
@@ -174,6 +194,11 @@ public class Chatbot
 		return botRandom;
 	}
 	
+	/**
+	 * 
+	 * @param polite - the users text
+	 * @return botPolite - if the users text contained any polite words
+	 */
 	private boolean isPolite(String polite)
 	{
 		boolean botPolite = false;
@@ -189,6 +214,11 @@ public class Chatbot
 		return botPolite;
 	}
 	
+	/**
+	 * 
+	 * @param politics - users text
+	 * @return botPolitical - if the users text was political
+	 */
 	private boolean isPolitical(String politics)
 	{
 		boolean botPolitical = false;
@@ -216,6 +246,11 @@ public class Chatbot
 		return botPolitical;
 	}
 	
+	/**
+	 * 
+	 * @param question - users text
+	 * @return hasQuestion - if the users text contained a question
+	 */
 	public boolean containsQuestion(String question)
 	{
 		boolean hasQuestion = false;
