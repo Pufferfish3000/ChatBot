@@ -2,7 +2,11 @@ package chat.model;
 
 import java.time.*;
 import java.util.*;
-
+/**
+ * Simple chatbot
+ * @author Byrnes Braden
+ *
+ */
 public class Chatbot 
 {
 	private String name;
@@ -27,6 +31,11 @@ public class Chatbot
 		this.randList.add("My creater ought to make a sky method so I can fall asleep looking at the stars ");
 		this.randList.add("I enjoy vanilla ice cream ");
 	}
+	/**
+	 * 
+	 * @param text The text that the user puts into process text
+	 * @return the chatbots answer
+	 */
 	
 	public String processText(String text)
 	{
