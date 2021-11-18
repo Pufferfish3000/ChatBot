@@ -78,6 +78,7 @@ public class Chatbot
 			response += answerQuestion(text);
 		}
 		chatbotResponse.add(response);
+		userInputs.add(text);
 		return response;
 	}
 	
@@ -331,7 +332,7 @@ public class Chatbot
 		for (int i = 0; i < actualWords.size(); i++)
 		{
 			String current = actualWords.get(i);
-			int count = 0;
+			int count = 1;
 			for (int j = 1; j < actualWords.size(); j++)
 			{
 				if (actualWords.get(j).equalsIgnoreCase(current))
@@ -359,6 +360,16 @@ public class Chatbot
 	public ArrayList <String> getChatbotResonses()
 	{
 		return this.chatbotResponse;
+	}
+	
+	public void setUserInputs(ArrayList <String> input)
+	{
+		this.userInputs = input;
+	}
+	
+	public void setChatbotRespomses(ArrayList <String> input)
+	{
+		this.chatbotResponse = input;
 	}
 	
 	@Override
