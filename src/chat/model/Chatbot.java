@@ -13,12 +13,16 @@ public class Chatbot
 	private int greetingCount;
 	private int farewellCount;
 	private ArrayList <String> randList = new ArrayList<String>();
+	private ArrayList <String> chatbotResponse;
+	private ArrayList <String> userInputs;
 	
 	public Chatbot(String name)
 	{
 		this.name = name;
 		this.greetingCount = 0;
 		this.farewellCount = 4;
+		this.userInputs = new ArrayList <String>();
+		this.chatbotResponse = new ArrayList <String>();
 		
 		this.randList.add("Do you enjoy art, i do ");
 		this.randList.add("On the weekdays, I spend my time playing with my cat ");
@@ -73,6 +77,7 @@ public class Chatbot
 			response += "\n";
 			response += answerQuestion(text);
 		}
+		chatbotResponse.add(response);
 		return response;
 	}
 	
@@ -305,6 +310,55 @@ public class Chatbot
 		answer += " I think " + getRandomTopic();
 		
 		return answer;
+	}
+	
+	public String getMostCommonWord(ArrayList <String> source)
+	{
+		String common = "";
+		
+		ArrayList <String> actualWords = new ArrayList <String>();
+		for (String sentence : source)
+		{
+			String [] words = sentence.split(" ");
+			for (String word : words)
+			{
+				actualWords.add(word);
+			}
+		}
+		
+		int most = 0;
+		
+		for (int i = 0; i < actualWords.size(); i++)
+		{
+			String current = actualWords.get(i);
+			int count = 0;
+			for (int j = 1; j < actualWords.size(); j++)
+			{
+				if (actualWords.get(j).equalsIgnoreCase(current))
+				{
+					count++;
+				}
+			}
+			if (count > most)
+			{
+				most = count;
+				common = current;
+			}
+		}
+		
+		common = "The most common word was: " + common + ", and it occurs: " + most + " times!";
+		
+		return common;
+	}
+
+	public ArrayList <String> getUserInputs()
+	{
+		return this.userInputs;
+	}
+	
+	public ArrayList <String> getChatbotResonses()
+	{
+		return this.chatbotResponse;
 	}
 	
 	@Override

@@ -3,6 +3,7 @@ package chat.controller;
 import java.util.*;
 import chat.model.Chatbot;
 import chat.view.Popup;
+import java.io.*;
 
 public class Controller 
 {
@@ -35,8 +36,16 @@ public class Controller
 			user = view.askQuestion(response);
 		}
 		view.displayMessage("Killing " + chatName + " please wait.");
-		
 		view.displayMessage(chatName+ " has been killed. Thank you!");
+		view.displayMessage(myChatbot.getMostCommonWord(myChatbot.getUserInputs()));
+		
+		
+	}
+	
+	public void handleError(Exception error)
+	{
+		String details = "your error is " + error.getMessage();
+		view.displayMessage(details);
 	}
 	
 	public String interactWithChatbot(String text)
@@ -45,7 +54,52 @@ public class Controller
 		response += myChatbot.processText(text);
 		
 		return response;
+	}
+	
+	private void saveListAsText(ArrayList <String> responses, String filename)
+	{
+		File saveFile = new File(filename);
 		
+		try (PrintWriter saveText = new PrintWriter(saveFile))
+		{
+			for (String content : responses)
+			{
+				saveText.println(content);
+			}
+		}
+		catch(IOException errorFromIO)
+		{
+			handleError(errorFromIO);
+		}
+		catch(Exception genericError) 
+		{
+			handleError(genericError);
+		}
+	}
+	
+	private ArrayList<String> loadTextToList(String filename)
+	{
+		ArrayList<String> fileContents = new ArrayList<String>();
+		
+		File source = new File(filename);
+		
+		try(Scanner fileScanner = new Scanner(source))
+		{
+			while (fileScanner.hasNextLine())
+			{
+				fileContents.add(fileScanner.nextLine());
+			}
+		}
+		catch(IOException fileError)
+		{
+			handleError(fileError);
+		}
+		catch(Exception error)
+		{
+			handleError(error);
+		}
+		
+		return fileContents;
 	}
 
 }
