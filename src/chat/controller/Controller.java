@@ -31,14 +31,14 @@ public class Controller
 	
 	public void start()
 	{
-		ArrayList<String> input = loadTextToList("user input.txt");
-		myChatbot.setUserInputs(input);
-		input = loadTextToList("chat.txt");
-		myChatbot.setChatbotRespomses(input);
-		
-		
-		
-//		view.displayMessage("Hi I am a chat bot!");
+//		ArrayList<String> input = loadTextToList("user input.txt");
+//		myChatbot.setUserInputs(input);
+//		input = loadTextToList("chat.txt");
+//		myChatbot.setChatbotRespomses(input);
+//		
+//		
+//		
+//		displayText("Hi I am a chat bot!");
 //		chatName = view.askQuestion("Please enter my name below!");
 //		
 //		myChatbot.setBotName(chatName);
@@ -50,11 +50,11 @@ public class Controller
 //			String response = interactWithChatbot(user);
 //			user = view.askQuestion(response);
 //		}
-//		view.displayMessage("Killing " + chatName + " please wait.");
-//		view.displayMessage(chatName+ " has been killed. Thank you!");
-//		view.displayMessage(myChatbot.getMostCommonWord(myChatbot.getUserInputs()));
+//		displayText("Killing " + chatName + " please wait.");
+//		displayText(chatName+ " has been killed. Thank you!");
+//		displayText(myChatbot.getMostCommonWord(myChatbot.getUserInputs()));
 //		
-//		view.displayMessage("LETS SAVE SOME TEXT!");
+//		displayText("LETS SAVE SOME TEXT!");
 //		saveListAsText(myChatbot.getUserInputs(), "user input.txt"); 
 //		saveListAsText(myChatbot.getChatbotResonses(), "chat output.txt");
 	}
@@ -122,9 +122,7 @@ public class Controller
 	public void getChatData(String chatInput)
 	{
 		userInput = chatInput;
-		
-		
-		
 	}
+	
 
 }

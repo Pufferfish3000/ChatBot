@@ -47,7 +47,7 @@ public class Panel extends JPanel
 			{
 				controller.getChatData(getTextField());
 				getTextField();
-				textAreaScroll.append("TESSSSSSSTTSTSTSTSTT");
+				textAreaScroll.append(getChatIDKlol());
 				
 			}
 		});
@@ -63,6 +63,8 @@ public class Panel extends JPanel
 	public String getChatIDKlol()
 	{
 		String stringy = "";
+		
+		stringy = controller.interactWithChatbot(getTextField());
 		
 		return stringy;
 	}
