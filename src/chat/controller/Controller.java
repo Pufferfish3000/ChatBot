@@ -12,7 +12,7 @@ public class Controller
 	private Scanner scan = new Scanner(System.in);
 	private Chatbot myChatbot;
 	private Popup view;
-	private Frame window;
+	private ChatFrame window;
     private Popup popup;
     public String userInput;
     
@@ -26,7 +26,7 @@ public class Controller
 	//this.view = new Popup();
   
     
-    this.window = new Frame(this);
+    this.window = new ChatFrame(this);
 	}
 	
 	public void start()
@@ -69,6 +69,13 @@ public class Controller
 	{
 		response = "";
 		response += myChatbot.processText(text);
+		
+		return response;
+	}
+	
+	public String interactWithChatbot(String text, String text2)
+	{
+		response = "";
 		
 		return response;
 	}

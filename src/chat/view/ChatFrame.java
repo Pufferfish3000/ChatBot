@@ -3,16 +3,16 @@ package chat.view;
 import chat.controller.*;
 import javax.swing.JFrame;
 
-public class Frame extends JFrame
+public class ChatFrame extends JFrame
 {
 	private Controller controller;
-	private Panel panel;
+	private ChatPanel panel;
 	
-	public Frame(Controller controller)
+	public ChatFrame(Controller controller)
 	{
 		super();
 		this.controller = controller;
-		this.panel = new Panel(controller);
+		this.panel = new ChatPanel(controller);
 		
 		setupFrame();
 	}

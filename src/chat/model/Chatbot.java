@@ -83,6 +83,10 @@ public class Chatbot
 		return response;
 	}
 	
+	public String processText(String text, int num)
+	{
+		return "";
+	}
 	//getters
 	public String getName()
 	{
@@ -258,7 +262,7 @@ public class Chatbot
 	 * @param question - users text
 	 * @return hasQuestion - if the users text contained a question
 	 */
-	public boolean containsQuestion(String question)
+	private boolean containsQuestion(String question)
 	{
 		boolean hasQuestion = false;
 		
@@ -274,7 +278,7 @@ public class Chatbot
 		return hasQuestion;
 	}
 	
-	public String answerQuestion(String input)
+	private String answerQuestion(String input)
 	{
 		String answer = "";
 		
@@ -379,5 +383,10 @@ public class Chatbot
 		String description = "I am a chat bot!, my name is " + name + "\n";
 		description += "Ask me a question!";
 		return description;
+	}
+	
+	public String interactWithChatbot(String text, String words)
+	{
+		return "";
 	}
 }

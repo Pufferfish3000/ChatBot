@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.awt.Color;
 import java.awt.GridLayout;
 
-public class Panel extends JPanel
+public class ChatPanel extends JPanel
 {
 	private Controller controller;
 	private JButton runButton;
@@ -15,7 +15,7 @@ public class Panel extends JPanel
 	public JScrollPane scrollLol;
 	public JTextArea textAreaScroll;
 	
-	Panel(Controller controller)
+	public ChatPanel(Controller controller)
 	{
 		super();
 		//JSCROLL PANE
